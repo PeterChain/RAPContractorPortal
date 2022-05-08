@@ -1,0 +1,19 @@
+projection;
+use draft;
+
+define behavior for ZC_PROJECT alias Project
+{
+  use create;
+  use update;
+  use delete;
+
+  use association Rate { create; with draft; }
+}
+
+define behavior for ZC_RATE alias Rate
+{
+  use update;
+  use delete;
+
+  use association Project { with draft; }
+}

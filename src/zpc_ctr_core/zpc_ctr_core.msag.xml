@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPC_CTR_CORE</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Contractor Portal: Core features</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Rates cannot overlap</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Rate from date cannot start before the project start date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Rate to date cannot end after the project end date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Description is obligatory</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Project dates are obligatory</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Project start date must be prior to project end date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Calendar country is obligatory</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Rate date is obligatory</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Hourly rate is obligatory</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_CORE</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Last rate should end at the project end</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

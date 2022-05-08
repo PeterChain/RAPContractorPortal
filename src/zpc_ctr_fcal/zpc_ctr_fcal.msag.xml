@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPC_CTR_FCAL</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Contractor Portal: Factory Calendar</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_FCAL</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Country calendar code is initial</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_FCAL</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Error in API call</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZPC_CTR_FCAL</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Error in API access</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

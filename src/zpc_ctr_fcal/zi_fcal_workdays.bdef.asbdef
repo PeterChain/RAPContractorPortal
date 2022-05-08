@@ -1,0 +1,55 @@
+managed implementation in class zbp_i_fcal_workdays unique;
+with draft;
+
+define behavior for ZI_FCAL_WORKDAYS alias Workdays
+draft table ztfcal_w_d
+persistent table ztfcal_w
+lock master total etag LocalLastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  association Holidays { create; with draft; }
+
+  field ( mandatory : create ) Calendar;
+
+  mapping for ztfcal_w
+  {
+    CalKey = cal_key;
+    Calendar = calendar;
+    WorkFriday = work_friday;
+    WorkThursday = work_thursday;
+    WorkWednesday = work_wednesday;
+    WorkTuesday = work_tuesday;
+    WorkMonday = work_monday;
+  }
+
+  action ( features : instance ) fill_from_ext_source;
+}
+
+
+define behavior for ZI_FCAL_HOLIDAYS alias Holidays
+draft table ztfcal_h_d
+persistent table ztfcal_h
+lock dependent by Workdays
+authorization dependent by Workdays
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+  field ( readonly ) Calendar, CalKey;
+  association Workdays { with draft; }
+
+  mapping for ztfcal_h
+  {
+    CalKey = cal_key;
+    Calendar = calendar;
+    CalHkey = cal_hkey;
+    CalYear = cal_year;
+    CalMonth = cal_month;
+    CalDay = cal_day;
+    Name = name;
+  }
+}

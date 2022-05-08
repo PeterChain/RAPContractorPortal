@@ -1,0 +1,5 @@
+@EndUserText.label: 'Contractor Portal: Factory calendar'
+define service ZUI_FACTORY_CAL {
+  expose ZC_FCAL_WORKDAYS as Workdays;
+  expose ZC_FCAL_HOLIDAYS as Holidays;
+}

@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service: Project core features'
+define service ZPROJECT_CORE {
+  expose ZC_PROJECT as Project;
+  expose ZC_RATE as Rate;
+  expose ZI_PROJ_TYPE as ProjectType;
+  expose I_Country as Country;
+}

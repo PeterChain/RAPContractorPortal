@@ -1,0 +1,77 @@
+managed implementation in class zbp_i_project unique;
+with draft;
+
+define behavior for ZI_PROJECT alias Project
+persistent table ztproject
+draft table ztproject_d
+lock master total etag LastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update, numbering : managed ) ProjectID;
+  field ( mandatory ) Type, FromDate, ToDate;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  draft determine action Prepare {
+    validation validateProjConsistency;
+    validation Rate ~ validateRateConsistency;
+    validation Rate ~ validateRatePeriod;
+    validation Rate ~ validateRateOverlap;
+  }
+
+  validation validateProjConsistency on save { create; update; }
+
+  mapping for ztproject
+  {
+    ProjectID = project_id;
+    Type = type;
+    Description = description;
+    FromDate = from_date;
+    ToDate = to_date;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+  }
+
+  association Rate { create ( features : instance ); with draft; }
+}
+
+
+define behavior for ZI_RATE alias Rate
+persistent table ztrate
+draft table ztrate_d
+lock dependent by Project
+authorization dependent by Project
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( readonly ) ProjectId;
+  field ( mandatory ) FromDate, ToDate, HourlyRate;
+
+  validation validateRateConsistency on save { create; update; }
+  validation validateRatePeriod on save { create; update; }
+  validation validateRateOverlap on save { create; update; }
+
+  mapping for ztrate
+  {
+    ProjectId = project_id;
+    FromDate = from_date;
+    ToDate = to_date;
+    HourlyRate = hourly_rate;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+  }
+
+  association Project { with draft; }
+}

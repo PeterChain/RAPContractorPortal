@@ -1,0 +1,5 @@
+CLASS zbp_i_fcal_workdays DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fcal_workdays.
+ENDCLASS.
+
+CLASS zbp_i_fcal_workdays IMPLEMENTATION.
+ENDCLASS.

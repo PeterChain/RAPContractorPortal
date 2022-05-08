@@ -1,0 +1,21 @@
+projection;
+use draft;
+
+define behavior for ZC_FCAL_WORKDAYS alias Workdays
+{
+  use create;
+  use update;
+  use delete;
+
+  use association Holidays { create; with draft; }
+
+  use action fill_from_ext_source;
+}
+
+define behavior for ZC_FCAL_HOLIDAYS alias Holidays
+{
+  use update;
+  use delete;
+
+  use association Workdays { with draft; }
+}
